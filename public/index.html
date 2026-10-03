@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Capstone Lab program</title>
+<style>
+  :root{--ink:#1f2024;--soft:#55565c;--line:#e2e2e7;--accent:#4D148C}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;
+    background:#f4f4f7;color:var(--ink);
+    font:16px/1.6 "Segoe UI",Roboto,Helvetica,Arial,system-ui,sans-serif}
+  .card{background:#fff;border-radius:14px;padding:44px;max-width:620px;width:100%;
+    box-shadow:0 1px 3px rgba(16,17,24,.08),0 10px 30px rgba(16,17,24,.06)}
+  h1{font-size:28px;margin:0 0 10px;letter-spacing:-.4px}
+  p{margin:0 0 16px;color:var(--soft)}
+  ol{margin:0 0 8px;padding-left:20px;color:var(--ink)}
+  li{margin-bottom:7px}
+  code{background:#f3f3f7;border-radius:5px;padding:2px 6px;font-size:14px;
+    font-family:ui-monospace,Menlo,Consolas,monospace}
+  .rev{margin-top:26px;padding-top:16px;border-top:1px solid var(--line);
+    font-size:13px;color:var(--soft)}
+  .ok{display:inline-block;width:9px;height:9px;border-radius:50%;
+    background:#1a7f4b;margin-right:7px}
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>Welcome to the Capstone Lab program</h1>
+    <p><span class="ok"></span>If you are reading this, a container built from this
+    repository is running on Cloud Run and answering requests. That is the whole
+    path working: source, image, registry, deploy, URL.</p>
+
+    <p>To make it yours:</p>
+    <ol>
+      <li>Clone this repository, or use it as a template.</li>
+      <li>Edit <code>public/index.html</code> and say something else.</li>
+      <li>Push to <code>main</code>.</li>
+      <li>Watch the deploy, then reload your own URL.</li>
+    </ol>
+
+    <p>The <code>Dockerfile</code> is the part worth reading. It listens on
+    <code>$PORT</code> and binds <code>0.0.0.0</code>, which is the difference
+    between a container that runs on your laptop and one that runs here.</p>
+
+    <div class="rev">Revision <code>{{REVISION}}</code></div>
+  </div>
+</body>
+</html>
