@@ -26,4 +26,8 @@ docker run -p 8080:8080 capstone-starter
 `localhost` works on your machine and fails on Cloud Run with no useful error,
 which is the most common way a first deploy goes wrong.
 
-`/healthz` returns `ok` for anything that wants to check the process is up.
+`/health` returns `ok` for anything that wants to check the process is up.
+
+Deliberately not `/healthz`: Cloud Run intercepts that exact path and answers
+404 itself, so a handler on it never runs. It works locally and fails in
+production, which is a confusing way to lose an afternoon.

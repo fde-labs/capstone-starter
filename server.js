@@ -14,7 +14,9 @@ const page = readFileSync(join(here, 'public', 'index.html'), 'utf8');
 const port = process.env.PORT || 8080;
 
 createServer((req, res) => {
-  if (req.url === '/healthz') {
+  // Not /healthz: Cloud Run intercepts that exact path and answers 404 before
+  // the request reaches the container. Verified on two separate services.
+  if (req.url === '/health') {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     return res.end('ok');
   }
